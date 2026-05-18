@@ -1,0 +1,85 @@
+{
+  "version": "1.0",
+  "updated": "2026-05-18",
+  "description": "CGO-FULI C-39 두피 케어 Few-shot 골드 데이터셋",
+  "constitution": "Zero Storage · 의학적 BASP 기준 · K-한방 임상 통계",
+  "examples": [
+    {
+      "id": "basp-o0-normal",
+      "url": "/examples/basp-o0-normal.jpeg",
+      "basp": "O0",
+      "type": "normal",
+      "category": "정상",
+      "erythema_pct": 3.2,
+      "follicle_density": 88,
+      "vellus_ratio": 0.05,
+      "diagnosis": "정상 두피 — 모낭 밀도 양호, 홍반 없음",
+      "care": "현재 관리 상태 유지"
+    },
+    {
+      "id": "basp-m1-mild",
+      "url": "/examples/basp-m1-mild.jpeg",
+      "basp": "M1",
+      "type": "m-shape-early",
+      "category": "M자 초기",
+      "erythema_pct": 6.5,
+      "follicle_density": 72,
+      "vellus_ratio": 0.15,
+      "diagnosis": "M자 초기 — 양쪽 이마 헤어라인 약간 후퇴",
+      "care": "두피 마사지 + 비오틴 보충 권장"
+    },
+    {
+      "id": "basp-m2-mid",
+      "url": "/examples/basp-m2-mid.jpeg",
+      "basp": "M2",
+      "type": "m-shape-mid",
+      "category": "M자 중기",
+      "erythema_pct": 9.1,
+      "follicle_density": 58,
+      "vellus_ratio": 0.32,
+      "diagnosis": "M자 중기 — 모낭당 모발 수 감소, 솜털화 진행",
+      "care": "전문의 상담 권장 + 미녹시딜 검토"
+    },
+    {
+      "id": "basp-v1-vertex",
+      "url": "/examples/basp-v1-vertex.jpeg",
+      "basp": "V1",
+      "type": "vertex-early",
+      "category": "정수리 초기",
+      "erythema_pct": 7.8,
+      "follicle_density": 68,
+      "vellus_ratio": 0.20,
+      "diagnosis": "정수리 초기 — 가르마 부위 두피 노출 약간 증가",
+      "care": "두피 열감 케어 + 스트레스 관리"
+    },
+    {
+      "id": "basp-v2-vertex-mid",
+      "url": "/examples/basp-v2-vertex-mid.jpeg",
+      "basp": "V2",
+      "type": "vertex-mid",
+      "category": "정수리 중기",
+      "erythema_pct": 11.4,
+      "follicle_density": 45,
+      "vellus_ratio": 0.45,
+      "diagnosis": "정수리 중기 — 모발 밀도 50% 이하, 두피 노출 명확",
+      "care": "전문의 진료 + 모발 이식 검토"
+    },
+    {
+      "id": "tongue-bai-thick",
+      "url": "/examples/tongue-bai-thick.jpeg",
+      "basp": null,
+      "type": "tongue-bai",
+      "category": "백태 두꺼움 (K-한방)",
+      "white_coat_pct": 38.5,
+      "deep_red_pct": 8.0,
+      "pale_red_pct": 15.0,
+      "diagnosis": "백태 두꺼움 — 기혈양허 패턴 (K-한방 변증)",
+      "care": "인삼·황기 약선 + 4-7-8 호흡법"
+    }
+  ],
+  "stats": {
+    "total_examples": 6,
+    "phase": "Phase 0 (시작)",
+    "next_milestone": "Phase 1 (10장 목표)"
+  }
+}
