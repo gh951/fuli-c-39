@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🛡️ fuli-c-39 · 두피 골드 데이터셋</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f0dca8;
+  min-height: 100vh;
+  padding: 20px;
+}
+.container { max-width: 900px; margin: 0 auto; }
+.header {
+  text-align: center;
+  padding: 32px 20px;
+  border-bottom: 1px solid rgba(251, 191, 36, 0.3);
+  margin-bottom: 32px;
+}
+.title {
+  font-size: 32px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.subtitle { font-size: 14px; color: rgba(240, 220, 168, 0.7); }
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: 12px;
+  color: #34d399;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+.section {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.section-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fbbf24;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-desc { font-size: 13px; color: rgba(240, 220, 168, 0.7); line-height: 1.6; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.stat-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+.stat-value {
+  font-size: 24px;
+  font-weight: 900;
+  color: #34d399;
+  margin-bottom: 4px;
+}
+.stat-label { font-size: 11px; color: rgba(240, 220, 168, 0.6); }
+.example-list { display: grid; gap: 10px; }
+.example-row {
+  padding: 14px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.example-info { flex: 1; min-width: 0; }
+.example-id { font-size: 13px; font-weight: 800; color: #fbbf24; margin-bottom: 4px; }
+.example-desc { font-size: 11px; color: rgba(240, 220, 168, 0.7); }
+.example-tag {
+  padding: 4px 10px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: 12px;
+  font-size: 10px;
+  color: #34d399;
+  font-weight: 700;
+}
+.url-box {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 8px;
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 12px;
+  word-break: break-all;
+}
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.phase {
+  padding: 14px;
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 10px;
+  text-align: center;
+}
+.phase.active {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+.phase-num { font-size: 11px; color: rgba(240, 220, 168, 0.5); margin-bottom: 4px; }
+.phase-count {
+  font-size: 20px;
+  font-weight: 900;
+  color: #fbbf24;
+  margin-bottom: 4px;
+}
+.phase-acc { font-size: 10px; color: rgba(240, 220, 168, 0.6); }
+.footer {
+  text-align: center;
+  padding: 24px;
+  color: rgba(240, 220, 168, 0.4);
+  font-size: 11px;
+  line-height: 1.6;
+  border-top: 1px solid rgba(251, 191, 36, 0.15);
+  margin-top: 32px;
+}
+.status {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  margin-right: 6px;
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.7); }
+  50% { box-shadow: 0 0 0 8px rgba(16,185,129,0); }
+}
+.loading { text-align: center; padding: 40px; color: rgba(240,220,168,0.5); }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="title">🛡️ fuli-c-39</div>
+    <div class="subtitle">C-39 두피 케어 · Few-shot Learning 골드 데이터셋</div>
+    <div class="badge"><span class="status"></span>GitHub Pages · LIVE</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📊 현재 상태</div>
+    <div class="section-desc">CGO-FULI C-39 모듈이 자동으로 참조하는 Few-shot 학습 데이터셋입니다.</div>
+    <div class="stats-grid" id="stats-grid">
+      <div class="loading">데이터 로딩 중...</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🎯 진화 단계</div>
+    <div class="section-desc">사진 데이터가 늘어날수록 진단 정확도가 자동 상승합니다.</div>
+    <div class="phase-grid">
+      <div class="phase active">
+        <div class="phase-num">Phase 0</div>
+        <div class="phase-count">0장</div>
+        <div class="phase-acc">시작 단계</div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">Phase 1</div>
+        <div class="phase-count">10장</div>
+        <div class="phase-acc">+30% 정확도</div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">Phase 2</div>
+        <div class="phase-count">100장</div>
+        <div class="phase-acc">+60% 정확도</div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">Phase 3</div>
+        <div class="phase-count">1,000장</div>
+        <div class="phase-acc">룰루랩 80% 수준 ⭐</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📋 Few-shot 예시 (현재)</div>
+    <div class="example-list" id="example-list">
+      <div class="loading">로딩 중...</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🔗 본진 연동</div>
+    <div class="section-desc">CGO-FULI 본진이 자동으로 fetch하는 메타데이터 URL:</div>
+    <div class="url-box">https://gh951.github.io/fuli-c-39/metadata.json</div>
+    <div class="section-desc" style="margin-top: 12px;">예시 사진 URL (예):</div>
+    <div class="url-box">https://gh951.github.io/fuli-c-39/examples/basp-o0-normal.jpeg</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🏛️ 헌법 v2.0 준수</div>
+    <div class="section-desc">
+      ✅ <b>ZERO STORAGE</b>: 사용자 사진 절대 저장 X (이 DB는 학습용 예시만)<br>
+      ✅ <b>무료 무한</b>: GitHub Pages 무료 호스팅 (서버비 0원)<br>
+      ✅ <b>점진적 확장</b>: 0장 → 10장 → 1,000장 자동 정확도 상승<br>
+      ✅ <b>의학적 백본</b>: BASP 표준 + K-한방 임상 통계
+    </div>
+  </div>
+
+  <div class="footer">
+    ✦ Built by Lee Ju One × C-39 × Google AI × Claude ✦<br>
+    🛡️ CGO-FULI Constitution v2.0 · ZERO STORAGE · ZERO SERVER<br>
+    <br>
+    <a href="metadata.json" style="color:#fbbf24;">metadata.json</a> ·
+    <a href="README.md" style="color:#fbbf24;">README.md</a> ·
+    <a href="https://github.com/gh951/fuli-c-39" style="color:#fbbf24;">GitHub</a>
+  </div>
+</div>
+
+<script>
+// metadata.json 자동 로드 + 표시
+fetch('./metadata.json')
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    // 통계
+    var statsHtml = '';
+    statsHtml += '<div class="stat-card"><div class="stat-value">' + data.examples.length + '</div><div class="stat-label">예시 데이터</div></div>';
+    statsHtml += '<div class="stat-card"><div class="stat-value">' + data.version + '</div><div class="stat-label">버전</div></div>';
+    statsHtml += '<div class="stat-card"><div class="stat-value">' + data.updated + '</div><div class="stat-label">최근 업데이트</div></div>';
+    statsHtml += '<div class="stat-card"><div class="stat-value">' + (data.stats ? data.stats.phase.split(' ')[0] : 'Phase 0') + '</div><div class="stat-label">현재 단계</div></div>';
+    document.getElementById('stats-grid').innerHTML = statsHtml;
+
+    // 예시 리스트
+    var listHtml = '';
+    data.examples.forEach(function(ex){
+      listHtml += '<div class="example-row">';
+      listHtml += '<div class="example-info">';
+      listHtml += '<div class="example-id">' + (ex.basp ? '🛡️ BASP ' + ex.basp : '👅') + ' · ' + ex.id + '</div>';
+      listHtml += '<div class="example-desc">' + ex.diagnosis + '</div>';
+      listHtml += '</div>';
+      listHtml += '<div class="example-tag">' + ex.category + '</div>';
+      listHtml += '</div>';
+    });
+    document.getElementById('example-list').innerHTML = listHtml;
+  })
+  .catch(function(err){
+    document.getElementById('stats-grid').innerHTML = '<div class="loading">⚠️ metadata.json 로드 실패</div>';
+    document.getElementById('example-list').innerHTML = '<div class="loading">⚠️ ' + err.message + '</div>';
+  });
+
+console.log('%c🛡️ fuli-c-39', 'font-size:18px;font-weight:900;color:#fbbf24;');
+console.log('%c✦ Built by Lee Ju One × C-39 × Google AI × Claude ✦', 'color:#10b981;');
+console.log('%c🏛️ CGO-FULI Constitution v2.0', 'color:#fbbf24;');
+</script>
+</body>
+</html>
